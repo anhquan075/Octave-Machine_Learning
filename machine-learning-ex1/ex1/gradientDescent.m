@@ -2,7 +2,10 @@ function [theta, J_history] = gradientDescent(X, y, theta, alpha, num_iters)
 %GRADIENTDESCENT Performs gradient descent to learn theta
 %   theta = GRADIENTDESCENT(X, y, theta, alpha, num_iters) updates theta by 
 %   taking num_iters gradient steps with learning rate alpha
-
+X =('C:\Users\nguye\Documents\GitHub\Octave_Machine_Learning\machine-learning-ex1\ex1\ex1data2.txt')
+y = ('C:\Users\nguye\Documents\GitHub\Octave_Machine_Learning\machine-learning-ex1\ex1\ex1data2.txt')
+num_iters = 100
+theta = gradientDescent(X, y, theta, alpha, num_iters)
 % Initialize some useful values
 m = length(y); % number of training examples
 J_history = zeros(num_iters, 1);
@@ -16,13 +19,11 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCost) and gradient here.
     %
-    x = X(:,2);
-    h = theta(1) + (theta(2)*x);
+    delta = (1/m)*sum(X.*repmat((X*theta - y), 1, size(X,2)));
+    
+    
+    theta = (theta' - (alpha * delta))';
 
-    theta_zero = theta(1) - alpha * (1/m) * sum(h-y);
-    theta_one  = theta(2) - alpha * (1/m) * sum((h - y) .* x);
-  
-    theta = [theta_zero,theta_one];
 
 
 
@@ -34,5 +35,5 @@ for iter = 1:num_iters
     J_history(iter) = computeCost(X, y, theta);
 
 end
-  disp(min(J_history));
+
 end
