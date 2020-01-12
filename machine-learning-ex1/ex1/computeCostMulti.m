@@ -3,8 +3,6 @@ function J = computeCostMulti(X, y, theta)
 %   J = COMPUTECOSTMULTI(X, y, theta) computes the cost of using theta as the
 %   parameter for linear regression to fit the data points in X and y
 
-X = load('C:\Users\nguye\Documents\GitHub\Octave_Machine_Learning\machine-learning-ex1\ex1\ex1data2.txt')
-y = load('C:\Users\nguye\Documents\GitHub\Octave_Machine_Learning\machine-learning-ex1\ex1\ex1data2.txt')
 % Initialize some useful values
 m = length(y); % number of training examples
 

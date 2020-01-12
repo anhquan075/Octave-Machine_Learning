@@ -2,10 +2,6 @@ function [theta, J_history] = gradientDescent(X, y, theta, alpha, num_iters)
 %GRADIENTDESCENT Performs gradient descent to learn theta
 %   theta = GRADIENTDESCENT(X, y, theta, alpha, num_iters) updates theta by 
 %   taking num_iters gradient steps with learning rate alpha
-X =('C:\Users\nguye\Documents\GitHub\Octave_Machine_Learning\machine-learning-ex1\ex1\ex1data2.txt')
-y = ('C:\Users\nguye\Documents\GitHub\Octave_Machine_Learning\machine-learning-ex1\ex1\ex1data1.txt')
-num_iters = 100
-theta = 0.3
 % Initialize some useful values
 m = length(y); % number of training examples
 J_history = zeros(num_iters, 1);
